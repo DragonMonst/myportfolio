@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Flex, VStack, HStack, Image } from '@chakra-ui/react'
+import { Box, Heading, Text, Flex, VStack, SimpleGrid, Image, Badge } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 import utLogo from '../assets/ut.png'
 
@@ -18,6 +18,23 @@ function Education() {
         'GPA: 9.8 / 10.0',
       ],
     }
+  ]
+
+  const certifications = [
+    {
+      name: 'IELTS',
+      score: '8.0',
+      organization: 'British Council',
+      date: '2024',
+      description: 'Overall Band Score: 8.0',
+    },
+    {
+      name: 'SAT',
+      score: '1520',
+      organization: 'College Board',
+      date: '2024',
+      description: 'Total Score: 1520/1600',
+    },
   ]
 
   return (
@@ -63,103 +80,287 @@ function Education() {
             Education
           </Heading>
         </VStack>
-        <VStack align="stretch" gap={8}>
-          {education.map((edu, index) => (
+        <VStack gap={8} maxW="1200px" mx="auto">
+          {/* Main Education */}
+          <Box w="100%">
+            {education.map((edu, index) => (
             <Box
               key={index}
               bg="white"
-              borderRadius="2xl"
-              p={{ base: 6, md: 10 }}
-              boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
-              border="1px solid"
-              borderColor="gray.100"
+              borderRadius="3xl"
+              p={{ base: 8, md: 12 }}
+              boxShadow="0 8px 32px rgba(0, 0, 0, 0.1)"
+              border="2px solid"
+              borderColor="purple.100"
+              position="relative"
+              overflow="hidden"
               _hover={{
-                transform: 'translateY(-4px)',
-                boxShadow: '0 12px 40px rgba(102, 126, 234, 0.15)',
-                borderColor: 'purple.200',
-                borderLeftColor: 'purple.600',
+                transform: 'translateY(-8px)',
+                boxShadow: '0 16px 48px rgba(102, 126, 234, 0.2)',
+                borderColor: 'purple.300',
               }}
-              transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+              transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
             >
-              <Flex gap={6} align="flex-start">
-                <Box
-                  w="70px"
-                  h="70px"
-                  borderRadius="full"
-                  bg="white"
-                  display={{ base: 'none', md: 'flex' }}
-                  alignItems="center"
-                  justifyContent="center"
-                  flexShrink={0}
-                  boxShadow="0 4px 15px rgba(139, 92, 246, 0.3)"
-                  border="2px solid"
-                  borderColor="purple.100"
-                  p={2}
-                  overflow="hidden"
+              {/* Decorative gradient background */}
+              <Box
+                position="absolute"
+                top={0}
+                left={0}
+                right={0}
+                h="6px"
+                bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
+              />
+              
+              <VStack align="stretch" gap={6}>
+                {/* Header Section */}
+                <Flex 
+                  direction={{ base: 'column', md: 'row' }} 
+                  gap={6} 
+                  align={{ base: 'center', md: 'flex-start' }}
                 >
-                  <Image
-                    src={edu.logo}
-                    alt={`${edu.institution} logo`}
-                    w="100%"
-                    h="100%"
-                    objectFit="contain"
-                  />
-                </Box>
-                <VStack align="stretch" flex={1} gap={4}>
-                  <Box>
-                    <Heading as="h3" fontSize={{ base: 'lg', md: 'xl' }} mb={2} color="gray.900" fontWeight={700}>
+                  {/* Logo */}
+                  <Box
+                    w={{ base: '100px', md: '120px' }}
+                    h={{ base: '100px', md: '120px' }}
+                    borderRadius="2xl"
+                    bg="white"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    flexShrink={0}
+                    boxShadow="0 8px 24px rgba(102, 126, 234, 0.2)"
+                    border="3px solid"
+                    borderColor="purple.100"
+                    p={3}
+                    overflow="hidden"
+                  >
+                    <Image
+                      src={edu.logo}
+                      alt={`${edu.institution} logo`}
+                      w="100%"
+                      h="100%"
+                      objectFit="contain"
+                    />
+                  </Box>
+                  
+                  {/* Title and Institution */}
+                  <VStack align={{ base: 'center', md: 'flex-start' }} flex={1} gap={3}>
+                    <Heading 
+                      as="h3" 
+                      fontSize={{ base: '2xl', md: '3xl' }} 
+                      color="gray.900" 
+                      fontWeight={800}
+                      textAlign={{ base: 'center', md: 'left' }}
+                    >
                       {edu.degree}
                     </Heading>
-                    <Text fontSize={{ base: 'md', md: 'lg' }} color="purple.700" fontWeight={600}>
+                    <Text 
+                      fontSize={{ base: 'lg', md: 'xl' }} 
+                      color="purple.700" 
+                      fontWeight={700}
+                      textAlign={{ base: 'center', md: 'left' }}
+                    >
                       {edu.institution}
                     </Text>
-                  </Box>
-                  <Box
-                    bg="gray.50"
-                    p={4}
-                    borderRadius="md"
+                  </VStack>
+                </Flex>
+
+                {/* Details Section */}
+                <Box
+                  bgGradient="linear(135deg, #f7fafc 0%, #edf2f7 100%)"
+                  p={6}
+                  borderRadius="xl"
+                  border="1px solid"
+                  borderColor="gray.200"
+                >
+                  <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
+                    {edu.specialization && (
+                      <Box>
+                        <Text 
+                          fontWeight={700} 
+                          color="purple.600" 
+                          fontSize="sm"
+                          textTransform="uppercase"
+                          letterSpacing="wide"
+                          mb={2}
+                        >
+                          Specialization
+                        </Text>
+                        <Text color="gray.800" fontWeight={600} fontSize="lg">
+                          {edu.specialization}
+                        </Text>
+                      </Box>
+                    )}
+                    <Box>
+                      <Text 
+                        fontWeight={700} 
+                        color="purple.600" 
+                        fontSize="sm"
+                        textTransform="uppercase"
+                        letterSpacing="wide"
+                        mb={2}
+                      >
+                        Period
+                      </Text>
+                      <Text color="gray.800" fontWeight={600} fontSize="lg">
+                        {edu.period}
+                      </Text>
+                    </Box>
+                  </SimpleGrid>
+                </Box>
+
+                {/* Description Section */}
+                {edu.description && edu.description.length > 0 && (
+                  <Box 
+                    pt={6} 
+                    borderTop="2px solid" 
+                    borderColor="gray.200"
                   >
                     <VStack align="stretch" gap={3}>
-                      {edu.specialization && (
-                        <HStack>
-                          <Text fontWeight={600} color="purple.700" minW="120px" flexShrink={0}>
-                            Specialization:
-                          </Text>
-                          <Text color="gray.800" fontWeight={500}>{edu.specialization}</Text>
-                        </HStack>
-                      )}
-                      <HStack>
-                        <Text fontWeight={600} color="purple.700" minW="120px" flexShrink={0}>
-                          Period:
-                        </Text>
-                        <Text color="gray.800" fontWeight={500}>{edu.period}</Text>
-                      </HStack>
+                      {edu.description.map((item, i) => (
+                        <Flex 
+                          key={i} 
+                          align="center" 
+                          gap={3}
+                          color="gray.800" 
+                          fontWeight={500}
+                          fontSize="md"
+                        >
+                          <Box
+                            w="24px"
+                            h="24px"
+                            borderRadius="full"
+                            bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            flexShrink={0}
+                            color="white"
+                            fontWeight="bold"
+                            fontSize="sm"
+                          >
+                            ✓
+                          </Box>
+                          <Text>{item}</Text>
+                        </Flex>
+                      ))}
                     </VStack>
                   </Box>
-                  {edu.description && edu.description.length > 0 && (
-                    <Box pt={4} borderTop="1px solid" borderColor="gray.200">
-                      <VStack align="stretch" gap={2}>
-                        {edu.description.map((item, i) => (
-                          <Box key={i} color="gray.800" pl={6} position="relative" fontWeight={500}>
-                            <Box
-                              as="span"
-                              position="absolute"
-                              left={0}
-                              color="purple.600"
-                              fontWeight="bold"
-                            >
-                              ✓
-                            </Box>
-                            {item}
-                          </Box>
-                        ))}
-                      </VStack>
-                    </Box>
-                  )}
-                </VStack>
-              </Flex>
+                )}
+              </VStack>
             </Box>
           ))}
+          </Box>
+
+          {/* Certifications Section */}
+          <Box w="100%">
+            <Heading
+              as="h3"
+              fontSize={{ base: '2xl', md: '3xl' }}
+              fontWeight={700}
+              color="gray.800"
+              mb={6}
+              textAlign="center"
+            >
+              Certifications & Test Scores
+            </Heading>
+            <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
+              {certifications.map((cert, index) => (
+                <Box
+                  key={index}
+                  bg="white"
+                  borderRadius="2xl"
+                  p={{ base: 6, md: 8 }}
+                  boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
+                  border="2px solid"
+                  borderColor="purple.100"
+                  position="relative"
+                  overflow="hidden"
+                  _hover={{
+                    transform: 'translateY(-6px)',
+                    boxShadow: '0 12px 40px rgba(102, 126, 234, 0.2)',
+                    borderColor: 'purple.300',
+                  }}
+                  transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+                >
+                  {/* Decorative gradient background */}
+                  <Box
+                    position="absolute"
+                    top={0}
+                    left={0}
+                    right={0}
+                    h="4px"
+                    bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
+                  />
+                  
+                  <VStack align="stretch" gap={4}>
+                    <Flex justify="space-between" align="flex-start" gap={4}>
+                      <VStack align="flex-start" gap={1} flex={1}>
+                        <Heading
+                          as="h4"
+                          fontSize={{ base: 'xl', md: '2xl' }}
+                          fontWeight={800}
+                          color="gray.900"
+                        >
+                          {cert.name}
+                        </Heading>
+                        <Text
+                          fontSize="sm"
+                          color="purple.600"
+                          fontWeight={600}
+                        >
+                          {cert.organization}
+                        </Text>
+                      </VStack>
+                      <Box
+                        bg={cert.name === 'IELTS' ? 'blue.100' : 'purple.100'}
+                        color={cert.name === 'IELTS' ? 'blue.700' : 'purple.700'}
+                        px={5}
+                        py={2}
+                        borderRadius="xl"
+                        fontWeight={800}
+                        fontSize={{ base: 'lg', md: 'xl' }}
+                        boxShadow="0 4px 16px rgba(0, 0, 0, 0.1)"
+                        minW={{ base: '80px', md: '100px' }}
+                        textAlign="center"
+                        border="2px solid"
+                        borderColor={cert.name === 'IELTS' ? 'blue.300' : 'purple.300'}
+                      >
+                        {cert.score}
+                      </Box>
+                    </Flex>
+                    
+                    <Box
+                      pt={4}
+                      borderTop="1px solid"
+                      borderColor="gray.200"
+                    >
+                      <Flex justify="space-between" align="center">
+                        <Text
+                          fontSize="sm"
+                          color="gray.600"
+                          fontWeight={500}
+                        >
+                          {cert.description}
+                        </Text>
+                        <Badge
+                          bg="purple.50"
+                          color="purple.700"
+                          px={3}
+                          py={1}
+                          borderRadius="full"
+                          fontSize="xs"
+                          fontWeight={700}
+                        >
+                          {cert.date}
+                        </Badge>
+                      </Flex>
+                    </Box>
+                  </VStack>
+                </Box>
+              ))}
+            </SimpleGrid>
+          </Box>
         </VStack>
       </Box>
 

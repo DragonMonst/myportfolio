@@ -9,7 +9,6 @@ import Experience from "./components/Experience";
 import Awards from "./components/Awards";
 import Projects from "./components/Projects";
 import Gallery from "./components/Gallery";
-import Videos from "./components/Videos";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 
@@ -25,7 +24,6 @@ function App() {
       "awards",
       "projects",
       "gallery",
-      "videos",
       "skills",
       "contact",
     ];
@@ -73,7 +71,6 @@ function App() {
         <Awards />
         <Projects />
         <Gallery />
-        <Videos />
         <Skills />
         <Contact />
       </Box>

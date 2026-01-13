@@ -1,4 +1,4 @@
-import { Box, Heading, Text, VStack, Badge, HStack } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, Flex } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 
 function Experience() {
@@ -62,121 +62,124 @@ function Experience() {
             Professional Experience
           </Heading>
         </VStack>
-        <Box position="relative" maxW="1000px" mx="auto">
-          {/* Center Timeline Line */}
-          <Box
-            position="absolute"
-            left="50%"
-            top={0}
-            bottom={0}
-            w="4px"
-            transform="translateX(-50%)"
-            bgGradient="linear(180deg, #667eea 0%, #764ba2 100%)"
-            borderRadius="full"
-            boxShadow="0 0 10px rgba(102, 126, 234, 0.3)"
-            display={{ base: 'none', md: 'block' }}
-          />
-          
-          <VStack align="stretch" gap={10}>
-            {experiences.map((exp, index) => {
-              const isEven = index % 2 === 0
-              return (
-                <Box
-                  key={index}
-                  position="relative"
-                  display="flex"
-                  alignItems="center"
-                  flexDirection={{ base: 'column', md: isEven ? 'row' : 'row-reverse' }}
-                  gap={{ base: 4, md: 6 }}
+        <Box maxW="1000px" mx="auto">
+          {experiences.map((exp, index) => (
+            <Box
+              key={index}
+              bg="white"
+              borderRadius="2xl"
+              p={{ base: 10, md: 14 }}
+              boxShadow="0 10px 40px rgba(0, 0, 0, 0.12)"
+              border="3px solid"
+              borderColor="gray.200"
+              position="relative"
+              overflow="hidden"
+              _hover={{
+                transform: 'translateY(-4px)',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
+                borderColor: 'purple.300',
+              }}
+              transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+            >
+              {/* Professional left border accent */}
+              <Box
+                position="absolute"
+                top={0}
+                left={0}
+                bottom={0}
+                w="6px"
+                bgGradient="linear(180deg, #667eea 0%, #764ba2 100%)"
+              />
+              
+              <VStack align="stretch" gap={8}>
+                {/* Header Section - Professional Layout */}
+                <Flex 
+                  direction={{ base: 'column', md: 'row' }} 
+                  justify="space-between" 
+                  align={{ base: 'flex-start', md: 'flex-start' }}
+                  gap={4}
+                  pb={6}
+                  borderBottom="2px solid"
+                  borderColor="gray.200"
                 >
-                  {/* Card */}
+                  <VStack align={{ base: 'flex-start', md: 'flex-start' }} gap={2} flex={1}>
+                    <Heading 
+                      as="h3" 
+                      fontSize={{ base: '2xl', md: '3xl' }} 
+                      color="gray.900" 
+                      fontWeight={800}
+                      lineHeight="shorter"
+                    >
+                      {exp.title}
+                    </Heading>
+                    <Text 
+                      fontSize={{ base: 'lg', md: 'xl' }} 
+                      color="purple.700" 
+                      fontWeight={700}
+                    >
+                      {exp.company}
+                    </Text>
+                  </VStack>
                   <Box
-                    flex={{ base: '1', md: '1' }}
-                    maxW={{ base: '100%', md: '45%' }}
-                    bg="white"
-                    p={{ base: 6, md: 8 }}
-                    borderRadius="xl"
-                    boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
-                    border="1px solid"
-                    borderColor="gray.100"
-                    _hover={{
-                      transform: { base: 'translateY(-4px)', md: isEven ? 'translateX(-8px)' : 'translateX(8px)' },
-                      boxShadow: '0 8px 30px rgba(102, 126, 234, 0.15)',
-                      borderColor: 'purple.200',
-                    }}
-                    transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-                  >
-                    <HStack mb={3} flexWrap="wrap" gap={2}>
-                      <Heading as="h3" fontSize={{ base: 'lg', md: 'xl' }} fontWeight={700} color="gray.900">
-                        {exp.title}
-                      </Heading>
-                      <Badge
-                        bgGradient="linear(135deg, #667eea, #764ba2)"
-                        color="blue"
-                        backgroundColor="gray.100"
-                        px={4}
-                        py={1.5}
-                        borderRadius="full"
-                        fontSize="sm"
-                        fontWeight={700}
-                        boxShadow="0 4px 12px rgba(102, 126, 234, 0.4)"
-                        letterSpacing="wide"
-                      >
-                        {exp.period}
-                      </Badge>
-                    </HStack>
-                  <Text fontSize={{ base: 'md', md: 'lg' }} color="purple.700" mb={4} fontWeight={600}>
-                    {exp.company}
-                  </Text>
-                  <VStack align="stretch" gap={3} mt={4}>
-                    {exp.description?.map((item, i) => (
-                      <Box
-                        key={i}
-                        color="gray.800"
-                        pl={6}
-                        position="relative"
-                        fontSize={{ base: 'sm', md: 'md' }}
-                        lineHeight="tall"
-                        fontWeight={500}
-                      >
-                          <Box
-                            as="span"
-                            position="absolute"
-                            left={0}
-                            color="purple.500"
-                            fontWeight="bold"
-                            fontSize="lg"
-                          >
-                            •
-                          </Box>
-                          {item}
-                        </Box>
-                      ))}
-                    </VStack>
-                  </Box>
-
-                  {/* Timeline Dot */}
-                  <Box
-                    position={{ base: 'relative', md: 'absolute' }}
-                    left={{ base: 'auto', md: '50%' }}
-                    transform={{ base: 'none', md: 'translateX(-50%)' }}
-                    w={{ base: '24px', md: '32px' }}
-                    h={{ base: '24px', md: '32px' }}
-                    borderRadius="full"
-                    bgGradient="linear(135deg, #667eea, #764ba2)"
-                    border="5px solid white"
-                    boxShadow="0 0 0 5px rgba(102, 126, 234, 0.3), 0 6px 20px rgba(102, 126, 234, 0.4)"
-                    zIndex={2}
+                    bg="purple.50"
+                    color="purple.700"
+                    px={6}
+                    py={2.5}
+                    borderRadius="lg"
+                    fontWeight={700}
+                    fontSize={{ base: 'sm', md: 'md' }}
+                    boxShadow="0 2px 8px rgba(102, 126, 234, 0.15)"
+                    border="2px solid"
+                    borderColor="purple.200"
+                    whiteSpace="nowrap"
                     flexShrink={0}
-                    display={{ base: 'none', md: 'block' }}
-                  />
+                  >
+                    {exp.period}
+                  </Box>
+                </Flex>
 
-                  {/* Spacer for desktop */}
-                  <Box flex={{ base: '0', md: '1' }} maxW={{ base: '0', md: '45%' }} display={{ base: 'none', md: 'block' }} />
-                </Box>
-              )
-            })}
-          </VStack>
+                {/* Description Section - Professional Bullets */}
+                {exp.description && exp.description.length > 0 && (
+                  <VStack align="stretch" gap={5}>
+                    {exp.description.map((item, i) => (
+                      <Flex 
+                        key={i}
+                        align="flex-start" 
+                        gap={4}
+                      >
+                        <Box
+                          w="32px"
+                          h="32px"
+                          borderRadius="md"
+                          bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
+                          display="flex"
+                          alignItems="center"
+                          justifyContent="center"
+                          flexShrink={0}
+                          color="green"
+                          fontWeight="bold"
+                          fontSize="lg"
+                          mt={0.5}
+                          boxShadow="0 2px 8px rgba(102, 126, 234, 0.3)"
+                        >
+                          ✓
+                        </Box>
+                        <Text 
+                          flex={1}
+                          color="gray.700" 
+                          fontWeight={500}
+                          fontSize={{ base: 'md', md: 'lg' }}
+                          lineHeight="tall"
+                        >
+                          {item}
+                        </Text>
+                      </Flex>
+                    ))}
+                  </VStack>
+                )}
+              </VStack>
+            </Box>
+          ))}
         </Box>
 
         {/* Scroll Arrow */}

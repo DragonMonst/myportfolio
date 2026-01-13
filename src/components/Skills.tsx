@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid, Badge, VStack, Flex } from '@chakra-ui/react'
+import { Box, Heading, VStack, Flex, Text } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 
 function Skills() {
@@ -7,46 +7,74 @@ function Skills() {
     if (element) element.scrollIntoView({ behavior: 'smooth' })
   }
 
-  // Color palette for badges
-  const badgeColors = [
-    { bg: 'purple.100', color: 'purple.700', hoverBg: 'purple.200' },
-    { bg: 'blue.100', color: 'blue.700', hoverBg: 'blue.200' },
-    { bg: 'cyan.100', color: 'cyan.700', hoverBg: 'cyan.200' },
-    { bg: 'teal.100', color: 'teal.700', hoverBg: 'teal.200' },
-    { bg: 'green.100', color: 'green.700', hoverBg: 'green.200' },
-    { bg: 'yellow.100', color: 'yellow.700', hoverBg: 'yellow.200' },
-    { bg: 'orange.100', color: 'orange.700', hoverBg: 'orange.200' },
-    { bg: 'red.100', color: 'red.700', hoverBg: 'red.200' },
-    { bg: 'pink.100', color: 'pink.700', hoverBg: 'pink.200' },
-    { bg: 'indigo.100', color: 'indigo.700', hoverBg: 'indigo.200' },
+  const skills = [
+    {
+      name: 'C++',
+      level: 90,
+      color: 'blue',
+      label: 'Advanced',
+    },
+    {
+      name: 'Python',
+      level: 65,
+      color: 'yellow',
+      label: 'Moderate',
+    },
+    {
+      name: 'JavaScript',
+      level: 60,
+      color: 'orange',
+      label: 'Moderate',
+    },
+    {
+      name: 'HTML',
+      level: 45,
+      color: 'green',
+      label: 'Some Experience',
+    },
+    {
+      name: 'CSS',
+      level: 40,
+      color: 'purple',
+      label: 'Some Experience',
+    },
   ]
 
-  const getBadgeColor = (index: number) => {
-    return badgeColors[index % badgeColors.length]
-  }
-
-  const skillCategories = [
-    {
-      category: 'Academic',
-      skills: ['Ielts 8.0', 'ACT 35/36 (STEM)', 'SAT 800/800 (Chemistry)'],
-    },
-    {
-      category: 'Professional',
-      skills: ['Couchbase Associate Developer', 'Certified Kubernetes App Developer', 'GCP Cloud Enginnering', 'AWS Cloud Practitioner'],
-    },
-    {
-      category: 'Data Engineering',
-      skills: ['GCP', 'Hadoop', 'Hive', 'Spark', 'Kafka', 'MySQL', 'MongoDB', 'Couchbase', 'Redis', 'dbt', 'Iceberg', 'Debezium'],
-    },
-    {
-      category: 'Data & ML',
-      skills: ['SQL', 'Python', 'Java', 'Scala', 'Bash', 'Airflow', 'Spring Boot', 'GCP', 'AWS', 'Scikit-learn', 'TensorFlow', 'PyTorch'],
-    },
-    {
-      category: 'DevOps & MLOps',
-      skills: ['Linux', 'Jenkins', 'Ansible', 'Docker', 'Kubernetes', 'Spring Cloud', 'ELK', 'Prometheus', 'Grafana', 'MLflow', 'Feature Store', 'Expectations'],
+  const getColorScheme = (color: string) => {
+    const colorMap: { [key: string]: { gradient: string; bg: string; text: string; barBg: string } } = {
+      blue: {
+        gradient: 'linear(135deg, #3b82f6 0%, #2563eb 100%)',
+        bg: 'blue.50',
+        text: 'blue.700',
+        barBg: 'blue.100',
+      },
+      yellow: {
+        gradient: 'linear(135deg, #fbbf24 0%, #f59e0b 100%)',
+        bg: 'yellow.50',
+        text: 'yellow.700',
+        barBg: 'yellow.100',
+      },
+      orange: {
+        gradient: 'linear(135deg, #fb923c 0%, #f97316 100%)',
+        bg: 'orange.50',
+        text: 'orange.700',
+        barBg: 'orange.100',
+      },
+      green: {
+        gradient: 'linear(135deg, #10b981 0%, #059669 100%)',
+        bg: 'green.50',
+        text: 'green.700',
+        barBg: 'green.100',
+      },
+      purple: {
+        gradient: 'linear(135deg, #8b5cf6 0%, #7c3aed 100%)',
+        bg: 'purple.50',
+        text: 'purple.700',
+        barBg: 'purple.100',
+      },
     }
-  ]
+    return colorMap[color] || colorMap.blue
+  }
 
   return (
     <Box
@@ -91,67 +119,181 @@ function Skills() {
             Technical Skills & Certifications
           </Heading>
         </VStack>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
-          {skillCategories.map((category, index) => (
+        <Box maxW="900px" mx="auto">
+          <Box
+            bg="white"
+            p={{ base: 8, md: 12 }}
+            borderRadius="3xl"
+            boxShadow="0 8px 32px rgba(0, 0, 0, 0.1)"
+            border="2px solid"
+            borderColor="purple.100"
+            position="relative"
+            overflow="hidden"
+            _hover={{
+              transform: 'translateY(-4px)',
+              boxShadow: '0 16px 48px rgba(102, 126, 234, 0.2)',
+              borderColor: 'purple.300',
+            }}
+            transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          >
+            {/* Decorative gradient background */}
             <Box
-              key={index}
-              bg="white"
-              p={8}
-              borderRadius="2xl"
-              boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
-              border="1px solid"
-              borderColor="gray.100"
-              _hover={{
-                transform: 'translateY(-4px)',
-                boxShadow: '0 8px 30px rgba(102, 126, 234, 0.15)',
-                borderColor: 'purple.200',
-              }}
-              transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-            >
+              position="absolute"
+              top={0}
+              left={0}
+              right={0}
+              h="6px"
+              bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
+            />
+            
+            <VStack align="stretch" gap={8}>
               <Heading
                 as="h3"
-                fontSize="lg"
-                mb={6}
+                fontSize={{ base: 'xl', md: '2xl' }}
                 color="gray.900"
-                fontWeight={700}
-                pb={3}
-                borderBottom="2px solid"
-                borderColor="purple.200"
+                fontWeight={800}
+                textAlign="center"
               >
-                {category.category}
+                Programming Languages
               </Heading>
-              <Flex
-                gap={2}
-                flexWrap="wrap"
-                align="flex-start"
-              >
-                {category.skills.map((skill, i) => {
-                  const colorScheme = getBadgeColor(i)
+              
+              <VStack align="stretch" gap={8}>
+                {skills.map((skill, index) => {
+                  const colorScheme = getColorScheme(skill.color)
                   return (
-                    <Badge
-                      key={i}
-                      bg={colorScheme.bg}
-                      color={colorScheme.color}
-                      px={2.5}
-                      py={1}
-                      borderRadius="md"
-                      fontSize="xs"
-                      fontWeight={600}
-                      textTransform="none"
-                      _hover={{
-                        bg: colorScheme.hoverBg,
-                        transform: 'translateY(-2px) scale(1.05)',
-                      }}
-                      transition="all 0.2s"
+                    <Box 
+                      key={index}
+                      p={6}
+                      bg="gray.50"
+                      borderRadius="xl"
+                      border="1px solid"
+                      borderColor="gray.200"
                     >
-                      {skill}
-                    </Badge>
+                      <Flex justify="space-between" align="center" mb={4}>
+                        <Flex align="center" gap={4}>
+                          <Box
+                            w="150px"
+                            h="50px"
+                            borderRadius="lg"
+                            bgGradient={colorScheme.gradient}
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            boxShadow="0 4px 12px rgba(0, 0, 0, 0.15)"
+                            flexShrink={0}
+                          >
+                            <Text
+                              fontSize="xl"
+                              fontWeight={800}
+                              color={colorScheme.text}
+                              fontFamily="monospace"
+                            >
+                              {skill.name}
+                            </Text>
+                          </Box>
+                          <VStack align="flex-start" gap={1}>
+                            <Box
+                              bg={colorScheme.bg}
+                              color={colorScheme.text}
+                              px={3}
+                              py={1}
+                              borderRadius="full"
+                              fontSize="xs"
+                              fontWeight={700}
+                              textTransform="uppercase"
+                              letterSpacing="wide"
+                            >
+                              {skill.label}
+                            </Box>
+                          </VStack>
+                        </Flex>
+                        <Box
+                          bg={colorScheme.bg}
+                          color={colorScheme.text}
+                          px={5}
+                          py={2}
+                          borderRadius="xl"
+                          fontSize={{ base: 'xl', md: '2xl' }}
+                          fontWeight={900}
+                          border="2px solid"
+                          borderColor={colorScheme.text}
+                          minW="80px"
+                          textAlign="center"
+                        >
+                          {skill.level}%
+                        </Box>
+                      </Flex>
+                      
+                      {/* Progress Bar with Grid Markers */}
+                      <Box position="relative" h="28px" mt={2}>
+                        {/* Grid markers */}
+                        <Flex position="absolute" w="100%" h="100%" justify="space-between" align="center" px={1}>
+                          {[0, 25, 50, 75, 100].map((marker) => (
+                            <Box
+                              key={marker}
+                              w="2px"
+                              h="100%"
+                              bg={marker === 0 || marker === 100 ? colorScheme.barBg : 'gray.300'}
+                              opacity={0.5}
+                            />
+                          ))}
+                        </Flex>
+                        
+                        {/* Progress Bar Container */}
+                        <Box
+                          w="100%"
+                          h="100%"
+                          bg={colorScheme.barBg}
+                          borderRadius="full"
+                          overflow="visible"
+                          position="relative"
+                          border="3px solid"
+                          borderColor={colorScheme.barBg}
+                          boxShadow="inset 0 2px 4px rgba(0, 0, 0, 0.1)"
+                        >
+                          <Box
+                            position="absolute"
+                            top="50%"
+                            left={`${skill.level}%`}
+                            transform="translate(-50%, -50%)"
+                            w="32px"
+                            h="32px"
+                            borderRadius="full"
+                            bgGradient={colorScheme.gradient}
+                            border="4px solid"
+                            borderColor="white"
+                            boxShadow="0 4px 16px rgba(0, 0, 0, 0.4)"
+                            transition="left 1s ease-in-out"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                          >
+                            <Box
+                              w="12px"
+                              h="12px"
+                              borderRadius="full"
+                              bg="white"
+                              boxShadow="0 2px 4px rgba(0, 0, 0, 0.2)"
+                            />
+                          </Box>
+                        </Box>
+                        
+                        {/* Scale Labels */}
+                        <Flex justify="space-between" mt={1} px={1}>
+                          <Text fontSize="xs" color="gray.500" fontWeight={600}>0%</Text>
+                          <Text fontSize="xs" color="gray.500" fontWeight={600}>25%</Text>
+                          <Text fontSize="xs" color="gray.500" fontWeight={600}>50%</Text>
+                          <Text fontSize="xs" color="gray.500" fontWeight={600}>75%</Text>
+                          <Text fontSize="xs" color="gray.500" fontWeight={600}>100%</Text>
+                        </Flex>
+                      </Box>
+                    </Box>
                   )
                 })}
-              </Flex>
-            </Box>
-          ))}
-        </SimpleGrid>
+              </VStack>
+            </VStack>
+          </Box>
+        </Box>
 
         {/* Scroll Arrow - Optional, can scroll to contact or top */}
         <Box

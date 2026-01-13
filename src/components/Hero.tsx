@@ -1,7 +1,6 @@
-import { Box, Container, Heading, Text, Button, Flex, VStack, Link, Image } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, Button, Flex, VStack, Link } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import profileImage from '../assets/profile.jpeg'
 
 function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -27,16 +26,84 @@ function Hero() {
         animation: 'gradientShift 15s ease infinite',
       }}
     >
-      {/* Animated floating particles */}
-      {[...Array(6)].map((_, i) => {
-        const size = 60 + i * 20
-        const top = 10 + i * 15
-        const left = 5 + i * 12
-        const duration = 8 + i * 2
-        
-        let gradient = 'linear(135deg, #f093fb, #f5576c)'
-        if (i % 3 === 1) gradient = 'linear(135deg, #4facfe, #00f2fe)'
-        else if (i % 3 === 2) gradient = 'linear(135deg, #43e97b, #38f9d7)'
+      {/* Animated code brackets */}
+      {['{', '}', '[', ']', '(', ')', '<', '>'].map((char, i) => (
+        <Text
+          key={i}
+          position="absolute"
+          fontSize={{ base: '4xl', md: '6xl', lg: '8xl' }}
+          fontWeight={900}
+          color="white"
+          opacity={0.05 + (i % 3) * 0.03}
+          top={`${15 + i * 10}%`}
+          left={`${5 + i * 12}%`}
+          fontFamily="monospace"
+          css={{
+            animation: `floatCode ${8 + i * 2}s ease-in-out infinite`,
+            animationDelay: `${i * 0.8}s`,
+            '@keyframes floatCode': {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-30px) rotate(5deg)' },
+            },
+          }}
+        >
+          {char}
+        </Text>
+      ))}
+
+      {/* Animated code snippets */}
+      {['const', 'function', 'return', 'import', 'export', 'async', 'await'].map((keyword, i) => (
+        <Text
+          key={i}
+          position="absolute"
+          fontSize={{ base: 'sm', md: 'md' }}
+          fontWeight={600}
+          color="white"
+          opacity={0.08}
+          top={`${20 + i * 12}%`}
+          right={`${5 + i * 8}%`}
+          fontFamily="monospace"
+          css={{
+            animation: `slideCode ${10 + i * 2}s ease-in-out infinite`,
+            animationDelay: `${i * 1.2}s`,
+            '@keyframes slideCode': {
+              '0%, 100%': { transform: 'translateX(0px) translateY(0px)' },
+              '50%': { transform: 'translateX(-20px) translateY(-15px)' },
+            },
+          }}
+        >
+          {keyword}
+        </Text>
+      ))}
+
+      {/* Animated grid pattern */}
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        opacity={0.03}
+        css={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px',
+          animation: 'gridMove 20s linear infinite',
+          '@keyframes gridMove': {
+            '0%': { transform: 'translate(0, 0)' },
+            '100%': { transform: 'translate(50px, 50px)' },
+          },
+        }}
+      />
+
+      {/* Floating geometric shapes */}
+      {[...Array(8)].map((_, i) => {
+        const size = 40 + i * 15
+        const top = 10 + i * 11
+        const left = 8 + i * 10
+        const duration = 12 + i * 3
         
         return (
           <Box
@@ -44,14 +111,21 @@ function Hero() {
             position="absolute"
             w={`${size}px`}
             h={`${size}px`}
-            borderRadius="full"
-            bgGradient={gradient}
-            opacity={0.2 + i * 0.05}
+            borderRadius={i % 2 === 0 ? 'full' : 'lg'}
+            border="2px solid"
+            borderColor="white"
+            opacity={0.1 + (i % 3) * 0.05}
             top={`${top}%`}
             left={`${left}%`}
             css={{
-              animation: `float ${duration}s ease-in-out infinite`,
-              animationDelay: `${i * 0.5}s`,
+              animation: `floatShape ${duration}s ease-in-out infinite`,
+              animationDelay: `${i * 0.7}s`,
+              '@keyframes floatShape': {
+                '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+                '25%': { transform: 'translate(20px, -20px) rotate(90deg)' },
+                '50%': { transform: 'translate(-15px, -30px) rotate(180deg)' },
+                '75%': { transform: 'translate(-20px, 10px) rotate(270deg)' },
+              },
             }}
           />
         )
@@ -279,6 +353,7 @@ function Hero() {
             </Flex>
           </VStack>
 
+          {/* Developer-themed visual element */}
           <Box
             flex={1}
             display={{ base: 'none', lg: 'flex' }}
@@ -289,38 +364,100 @@ function Hero() {
             }}
           >
             <Box
-              w="400px"
-              h="400px"
-              borderRadius="2xl"
-              overflow="hidden"
-              border="4px solid"
-              borderColor="white"
-              boxShadow="0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 255, 255, 0.2)"
               position="relative"
-              css={{
-                animation: 'float 6s ease-in-out infinite',
-                '@keyframes float': {
-                  '0%, 100%': { transform: 'translateY(0px)' },
-                  '50%': { transform: 'translateY(-20px)' },
-                },
-              }}
+              w="500px"
+              h="500px"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
             >
-              <Image
-                src={profileImage}
-                alt="Nham Quoc Hung"
-                w="100%"
-                h="100%"
-                objectFit="cover"
-              />
+              {/* Animated terminal window */}
               <Box
-                position="absolute"
-                top={0}
-                left={0}
-                right={0}
-                bottom={0}
-                bgGradient="linear(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)"
-                pointerEvents="none"
-              />
+                w="400px"
+                h="300px"
+                bg="rgba(0, 0, 0, 0.3)"
+                backdropFilter="blur(10px)"
+                borderRadius="xl"
+                border="2px solid"
+                borderColor="rgba(255, 255, 255, 0.2)"
+                p={6}
+                boxShadow="0 20px 60px rgba(0, 0, 0, 0.3)"
+                css={{
+                  animation: 'terminalPulse 4s ease-in-out infinite',
+                  '@keyframes terminalPulse': {
+                    '0%, 100%': { transform: 'scale(1)', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)' },
+                    '50%': { transform: 'scale(1.02)', boxShadow: '0 25px 70px rgba(102, 126, 234, 0.4)' },
+                  },
+                }}
+              >
+                <VStack align="flex-start" gap={3} color="white" fontFamily="monospace" fontSize="sm">
+                  <Flex gap={2} mb={2}>
+                    <Box w="12px" h="12px" borderRadius="full" bg="red.400" />
+                    <Box w="12px" h="12px" borderRadius="full" bg="yellow.400" />
+                    <Box w="12px" h="12px" borderRadius="full" bg="green.400" />
+                  </Flex>
+                  <Text opacity={0.8}>$ npm run portfolio</Text>
+                  <Text 
+                    opacity={0.6} 
+                    css={{
+                      animation: 'blink 1s infinite',
+                      '@keyframes blink': {
+                        '0%, 50%': { opacity: 0.6 },
+                        '51%, 100%': { opacity: 0.2 },
+                      },
+                    }}
+                  >
+                    {'>'} Building your future...
+                  </Text>
+                  <Text 
+                    opacity={0.6} 
+                    css={{
+                      animation: 'blink 1s infinite 0.5s',
+                      '@keyframes blink': {
+                        '0%, 50%': { opacity: 0.6 },
+                        '51%, 100%': { opacity: 0.2 },
+                      },
+                    }}
+                  >
+                    {'>'} Compiling achievements...
+                  </Text>
+                  <Text 
+                    opacity={0.6} 
+                    css={{
+                      animation: 'blink 1s infinite 1s',
+                      '@keyframes blink': {
+                        '0%, 50%': { opacity: 0.6 },
+                        '51%, 100%': { opacity: 0.2 },
+                      },
+                    }}
+                  >
+                    {'>'} Ready to deploy!
+                  </Text>
+                </VStack>
+              </Box>
+
+              {/* Floating code elements around terminal */}
+              {['</>', '{}', '[]', '()'].map((symbol, i) => (
+                <Text
+                  key={i}
+                  position="absolute"
+                  fontSize="3xl"
+                  fontWeight={900}
+                  color="white"
+                  opacity={0.15}
+                  fontFamily="monospace"
+                  css={{
+                    animation: `orbit ${8 + i * 2}s linear infinite`,
+                    animationDelay: `${i * 0.5}s`,
+                    '@keyframes orbit': {
+                      '0%': { transform: `rotate(${i * 90}deg) translateX(200px) rotate(${-i * 90}deg)` },
+                      '100%': { transform: `rotate(${360 + i * 90}deg) translateX(200px) rotate(${-360 - i * 90}deg)` },
+                    },
+                  }}
+                >
+                  {symbol}
+                </Text>
+              ))}
             </Box>
           </Box>
         </Flex>
