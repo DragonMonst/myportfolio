@@ -182,7 +182,7 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
               py={6}
             >
               <Flex justify="space-between" align="center">
-                <VStack align="flex-start" spacing={0}>
+                <VStack align="flex-start">
                   <Text fontSize="xl" fontWeight={800} mr={1}>
                     Navigation
                   </Text>
