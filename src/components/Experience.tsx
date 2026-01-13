@@ -8,40 +8,15 @@ function Experience() {
   }
   const experiences = [
     {
-      title: 'Educator',
-      company: 'AVK+',
-      period: '2025 - Present',
+      title: 'Software Engineer Intern',
+      company: 'MienBac Education JSC',
+      period: 'Jul 2025 - Aug 2025',
       description: [
-        'Mentored students both in-person and online on all things education-related and in various formats.',
-        'Covered subjects such as: Math, Science, English, Economics and Computer Science.',
-        'Prepared students for various certifications such as: SAT, ACT, IELTS, GCSE, GCE O-levels and A-levels, etc.',
-        'Supported students in applications and interviews for various scholarships and entrance exams such as ASEAN, A-Star, TestAS, AEIS, etc.',
+        'Worked as a software engineer intern for the IT department to enhance and support daily operations in an educational center for young students.',
+        'Revamped the inventory management system to fully automate the process of tracking inventory items which was used by more than 200 internal employees.',
+        'Implemented a string matching search engine and an automated item’s identifier generation algorithm to replace manual scrolling and input time by 40% per internal user.'
       ]
-    },
-    {
-      title: 'Data Engineer',
-      company: 'Torilab Inc.',
-      period: '2025 - Present',
-      description: [
-        'Supported BI team in building over 20 data models across 5 different applications and present actionable insights to company executives and business leaders on a biweekly basis',
-      ],
-    },
-    {
-      title: 'Software Engineer',
-      company: 'Rakuten Asia Pte Ltd',
-      period: '2023 - 2025',
-      description: [
-        'Worked under Global Ad Technology Supervisory Department to manage Ad Item Master, a key service which stores, delivers, tracks and reports highly critical, revenue-generating ads for hundreds of millions of Rakuten Group\'s Ichiba app users as well as merchants, one of Japan\'s largest online retail marketplaces',
-      ],
-    },
-    {
-      title: 'Data Engineer',
-      company: 'Sea Limited',
-      period: '2021 - 2023',
-      description: [
-        'Worked under Data Platform team to develop batch and real-time data ingestion pipelines to support downstream Finance users in data modelling and financial reporting for Garena, Sea Group\'s gaming arm',
-      ],
-    },
+    }
   ]
 
   return (

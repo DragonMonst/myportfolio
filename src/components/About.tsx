@@ -102,7 +102,7 @@ function About() {
                 textAlign="center"
                 fontWeight={500}
               >
-                I'm a passionate <Text as="span" fontWeight={700} color="purple.600">Data Engineer</Text> with a love for building reliable and efficient data pipelines. With a deep expertise in <Text as="span" fontWeight={700} color="blue.600">Big Data and Analytics</Text>, I enjoy transforming raw data into actionable insights, hence enabling organizations to make data-driven decisions.
+                I'm a passionate <Text as="span" fontWeight={700} color="purple.600">Competitive Programmer</Text> with a proven track record. I'm a frequenter in various national and regional programming competitions for high school students, learnt a ton of new things and continued to break new personal boundaries with every new experience gained.
               </Text>
               </Box>
 
@@ -126,7 +126,7 @@ function About() {
                 textAlign="center"
                 fontWeight={500}
               >
-                When I'm not coding, you can find me doing <Text as="span" fontWeight={700} color="cyan.600">3 things simultaneously</Text>: pursuing higher studies, exploring new technologies and mentoring students on all things education-related and in various formats.
+                When I'm not coding, you can find me engaging in <Text as="span" fontWeight={700} color="cyan.600">various activities</Text>: playing sports, volunteering for the community and taking part in local chess tournaments.
               </Text>
               </Box>
             </VStack>
@@ -171,13 +171,10 @@ function About() {
                 color="purple.600"
                 mb={5}
               >
-                4+
+                3+
               </Heading>
               <Text fontSize="lg" fontWeight={600} color="gray.800" mb={1}>
-                Years of Professional Data
-              </Text>
-              <Text fontSize="lg" fontWeight={600} color="gray.800">
-                and Software Engineering
+                Years of Competitive Programming
               </Text>
             </Box>
 
@@ -213,13 +210,10 @@ function About() {
                 color="blue.600"
                 mb={5}
               >
-                5+
+                1+
               </Heading>
               <Text fontSize="lg" fontWeight={600} color="gray.800" mb={1}>
-                Years of Teaching and
-              </Text>
-              <Text fontSize="lg" fontWeight={600} color="gray.800">
-                Mentoring
+                Years of volunteering at the National Institute of Hematology and Blood Transfusion
               </Text>
             </Box>
 
@@ -255,13 +249,13 @@ function About() {
                 color="cyan.600"
                 mb={5}
               >
-                3+
+                2+
               </Heading>
               <Text fontSize="lg" fontWeight={600} color="gray.800" mb={1}>
-                Years of Creating and Sharing
+                Years of participating in local 
               </Text>
               <Text fontSize="lg" fontWeight={600} color="gray.800">
-                Educational Content
+                chess tournaments
               </Text>
             </Box>
           </SimpleGrid>

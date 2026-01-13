@@ -142,7 +142,7 @@ function Hero() {
                   animation: 'fadeInUp 1s ease-out 0.2s both',
                 }}
               >
-                Nham Quoc Hung
+                Nguyen Thien Trung
               </Heading>
               <Heading
                 as="h2"
@@ -155,7 +155,7 @@ function Hero() {
                   animation: 'fadeInUp 1s ease-out 0.4s both',
                 }}
               >
-                Data Engineer, Software Engineer & Educator
+                Competitive Programmer, Chess Player & Football Fan
               </Heading>
               <Text
                 fontSize={{ base: 'md', md: 'lg' }}
@@ -167,7 +167,7 @@ function Hero() {
                   animation: 'fadeInUp 1s ease-out 0.6s both',
                 }}
               >
-                I am a Computer Science graduate with a specialisation in Data and passion for teaching.
+                I am a high school Informatics student with a knack for competitive programming and chess.
               </Text>
             </Box>
 

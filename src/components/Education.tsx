@@ -1,8 +1,6 @@
 import { Box, Heading, Text, Flex, VStack, HStack, Image } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 import utLogo from '../assets/ut.png'
-import nusLogo from '../assets/nus.svg'
-import saLogo from '../assets/sa.png'
 
 function Education() {
   const scrollToSection = (sectionId: string) => {
@@ -11,38 +9,15 @@ function Education() {
   }
   const education = [
     {
-      degree: 'Master\'s of Science in Computer Science',
-      institution: 'The University of Texas at Austin',
-      period: '2024 - 2026',
-      specialization: 'Computer Science',
+      degree: 'High School for Gifted Students',
+      institution: 'Hanoi National University of Education',
+      period: '2023 - 2026',
+      specialization: 'Informatics',
       logo: utLogo,
       description: [
-        'Relevant coursework: Deep Learning, Deep Generative Models, Machine Learning, Advanced Linear Algebra',
+        'GPA: 9.8 / 10.0',
       ],
-    },
-    {
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'National University of Singapore',
-      period: '2018 - 2022',
-      specialization: 'Database Management Systems and Artificial Intelligence',
-      logo: nusLogo,
-      description: [
-        'Graduated with honours',
-        'Full-ride ASEAN Undergraduate Scholarship for 4 years of study',
-        'Relevant coursework: Database Application Tuning, Big Data Systems for Data Science, Design and Analysis of Algorithms, Machine Learning',
-      ],
-    },
-    {
-      degree: 'Secondary School and Junior College Diploma',
-      institution: 'Saint Andrew\'s Junior College',
-      period: '2014 - 2018',
-      specialization: 'GCE O-levels and A-levels',
-      logo: saLogo,
-      description: [
-        'Full-ride ASEAN Secondary Scholarship for 4 years of study',
-        'Recipient of the Jacob Ballas Awards for Outstanding Performance in GCE A-Level Examination (Straight A\'s across 6 subjects)',
-      ],
-    },
+    }
   ]
 
   return (
