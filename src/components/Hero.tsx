@@ -1,6 +1,5 @@
-import { Box, Container, Heading, Text, Button, Flex, VStack, Link } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, Button, Flex, VStack } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 function Hero() {
   const scrollToSection = (sectionId: string) => {
