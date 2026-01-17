@@ -304,7 +304,7 @@ function Hero() {
                 animation: 'fadeInUp 1s ease-out 1s both',
               }}
             >
-              <Link
+              {/* <Link
                 href="https://github.com/nhamhung"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -335,8 +335,8 @@ function Hero() {
                 }}
               >
                 <FaLinkedin size={24} />
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="mailto:nhamhung.gttn@gmail.com"
                 color="white"
                 _hover={{
@@ -349,7 +349,7 @@ function Hero() {
                 }}
               >
                 <FaEnvelope size={24} />
-              </Link>
+              </Link> */}
             </Flex>
           </VStack>
 

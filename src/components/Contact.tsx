@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Box, Heading, Text, VStack, HStack, Link, Button, Input, Textarea } from '@chakra-ui/react'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaEnvelope } from 'react-icons/fa'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ function Contact() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )
-    window.location.href = `mailto:nhamhung.gttn@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:dragonmonst241@gmail.com?subject=${subject}&body=${body}`
   }
   return (
     <Box
@@ -278,7 +278,7 @@ function Contact() {
                 Or connect with me on
               </Text>
               <HStack gap={6} justify="center" flexWrap="wrap">
-                <Link
+                {/* <Link
                   href="https://github.com/nhamhung"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -341,9 +341,9 @@ function Contact() {
                   >
                     <FaLinkedin size={24} />
                   </Box>
-                </Link>
+                </Link> */}
                 <Link
-                  href="mailto:nhamhung.gttn@gmail.com"
+                  href="mailto:dragonmonst241@gmail.com"
                   _hover={{ textDecoration: 'none' }}
                 >
                   <Box

@@ -9,24 +9,21 @@ function Projects() {
   }
   const projects = [
     {
-      title: 'Master\'s Coursework and Technical Certificates',
-      description: 'All relevant coursework and technical certificates from my master\'s degree as well as working experiences.',
-      technologies: ['Deep Learning', 'Machine Learning', 'Linear Algebra', 'Generative AI'],
-      github: 'https://github.com/nhamhung/Coursework-and-Certificates',
+      title: 'Leader of CSP Hackathon',
+      description: 'Spearheaded the management committee to organise an orientation event to welcome 50+ enrolling Informatics students through a team-based Hackathon.',
+      technologies: ['Hackathon', 'Problem Set', 'Leaderboard', 'Scoring System'],
       demo: 'https://github.com/nhamhung/Coursework-and-Certificates/blob/main/Coursework/Statement%20of%20Purpose.pdf',
     },
     {
-      title: 'YouTube Channel',
-      description: 'A YouTube channel where I share my learning journey and experiences in Computer Science.',
-      technologies: ['Data Engineer', 'LeetCode', 'Data Analytics'],
-      github: 'https://github.com/nhamhung/youtube-scripts',
+      title: 'National Institute of Hematology and Blood Transfusion',
+      description: 'Enrolled in a weekly charity activity tin support of hospitalised patients and their families.',
+      technologies: ['Fund raising', 'Distribute Donations', 'Supply Necessities'],
       demo: 'https://www.youtube.com/watch?v=cmZ9-sDzYYY',
     },
     {
-      title: 'Personal Blog',
-      description: 'A personal blog where I share my knowledge and stories to others.',
-      technologies: ['Computer Science', 'AI', 'Cloud Computing'],
-      github: 'https://nhamhung.wordpress.com/',
+      title: 'Competitive Programming',
+      description: 'A repository of my competitive programming journey which includes daily training, contest participation, and problem solving.',
+      technologies: ['C++', 'Optimization', 'Complexity Analysis', 'Problem Solving', 'Time Management', 'Teamwork'],
       demo: 'https://nhamhung.wordpress.com/2025/03/10/nhat-ky-hang-ngay/',
     },
   ]
@@ -115,7 +112,7 @@ function Projects() {
                 ))}
               </HStack>
               <HStack gap={3}>
-                <Button
+                {/* <Button
                   onClick={() => window.open(project.github, '_blank')}
                   size="sm"
                   variant="outline"
@@ -134,7 +131,7 @@ function Projects() {
                     <Text>GitHub</Text>
                     <FiExternalLink />
                   </HStack>
-                </Button>
+                </Button> */}
                 <Button
                   onClick={() => window.open(project.demo, '_blank')}
                   size="sm"

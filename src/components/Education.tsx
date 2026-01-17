@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Flex, VStack, SimpleGrid, Image, Badge } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
-import utLogo from '../assets/ut.png'
+import hnueLogo from '../assets/hnue_logo.jpeg'
 
 function Education() {
   const scrollToSection = (sectionId: string) => {
@@ -13,7 +13,7 @@ function Education() {
       institution: 'Hanoi National University of Education',
       period: '2023 - 2026',
       specialization: 'Informatics',
-      logo: utLogo,
+      logo: hnueLogo,
       description: [
         'GPA: 9.8 / 10.0',
       ],
