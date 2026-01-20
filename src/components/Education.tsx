@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Flex, VStack, SimpleGrid, Image, Badge } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
-import hnueLogo from '../assets/hnue_logo.jpeg'
+import hnueLogo from '../assets/hnue_logo.png'
 
 function Education() {
   const scrollToSection = (sectionId: string) => {
@@ -24,16 +24,16 @@ function Education() {
     {
       name: 'IELTS',
       score: '8.0',
-      organization: 'British Council',
-      date: '2024',
-      description: 'Overall Band Score: 8.0',
+      organization: 'IDP',
+      date: '2025',
+      description: 'Writing Score: 7.5',
     },
     {
       name: 'SAT',
-      score: '1520',
+      score: '1510',
       organization: 'College Board',
-      date: '2024',
-      description: 'Total Score: 1520/1600',
+      date: '2025',
+      description: 'Total Score: 1510/1600',
     },
   ]
 

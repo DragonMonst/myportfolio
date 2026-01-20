@@ -16,26 +16,26 @@ function Skills() {
     },
     {
       name: 'Python',
-      level: 65,
+      level: 60,
       color: 'yellow',
       label: 'Moderate',
     },
     {
-      name: 'JavaScript',
-      level: 60,
-      color: 'orange',
-      label: 'Moderate',
-    },
-    {
       name: 'HTML',
-      level: 45,
+      level: 35,
       color: 'green',
       label: 'Some Experience',
     },
     {
       name: 'CSS',
-      level: 40,
+      level: 35,
       color: 'purple',
+      label: 'Some Experience',
+    },
+    {
+      name: 'JavaScript',
+      level: 30,
+      color: 'orange',
       label: 'Some Experience',
     },
   ]

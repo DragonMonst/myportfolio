@@ -11,8 +11,8 @@ function Projects() {
     {
       title: 'Leader of CSP Hackathon',
       description: 'Spearheaded the management committee to organise an orientation event to welcome 50+ enrolling Informatics students through a team-based Hackathon.',
-      technologies: ['Hackathon', 'Problem Set', 'Leaderboard', 'Scoring System'],
-      demo: 'https://github.com/nhamhung/Coursework-and-Certificates/blob/main/Coursework/Statement%20of%20Purpose.pdf',
+      technologies: ['Hackathon', 'Problem Set', 'Game Development', 'Leaderboard', 'Scoring System'],
+      demo: 'https://www.facebook.com/csp.hackathon',
     },
     {
       title: 'National Institute of Hematology and Blood Transfusion',

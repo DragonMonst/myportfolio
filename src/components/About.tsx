@@ -102,7 +102,7 @@ function About() {
                 textAlign="center"
                 fontWeight={500}
               >
-                I'm a passionate <Text as="span" fontWeight={700} color="purple.600">Competitive Programmer</Text> with a proven track record. I'm a frequenter in various national and regional programming competitions for high school students, learnt a ton of new things and continued to break new personal boundaries with every new experience gained.
+                I'm a passionate <Text as="span" fontWeight={700} color="purple.600">Competitive Programmer</Text> with a proven track record. I'm a frequenter in various national and regional programming contests and competitions for high school students, learnt a ton of new things and continued to break new personal boundaries with every new experience gained.
               </Text>
               </Box>
 
@@ -126,7 +126,7 @@ function About() {
                 textAlign="center"
                 fontWeight={500}
               >
-                When I'm not coding, you can find me engaging in <Text as="span" fontWeight={700} color="cyan.600">various activities</Text>: playing sports, volunteering for the community and taking part in local chess tournaments.
+                When I'm not coding, you can find me engaging in <Text as="span" fontWeight={700} color="cyan.600">various activities</Text>: playing sports, volunteering for the community and playing chess.
               </Text>
               </Box>
             </VStack>
@@ -249,13 +249,13 @@ function About() {
                 color="cyan.600"
                 mb={5}
               >
-                2+
+                3+
               </Heading>
               <Text fontSize="lg" fontWeight={600} color="gray.800" mb={1}>
-                Years of participating in local 
+                Years of participating in 
               </Text>
               <Text fontSize="lg" fontWeight={600} color="gray.800">
-                chess tournaments
+                the school's volunteer team
               </Text>
             </Box>
           </SimpleGrid>

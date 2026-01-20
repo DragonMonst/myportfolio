@@ -13,8 +13,8 @@ function Experience() {
       period: 'Jul 2025 - Aug 2025',
       description: [
         'Worked as a software engineer intern for the IT department to enhance and support daily operations in an educational center for young students.',
-        'Revamped the inventory management system to fully automate the process of tracking inventory items which was used by more than 200 internal employees.',
-        'Implemented a string matching search engine and an automated item’s identifier generation algorithm to replace manual scrolling and input time by 40% per internal user.'
+        'Revamped the inventory management system to fully automate the process of tracking inventory items, which was used by more than 200 internal employees.',
+        'Implemented a string matching search engine and an automated item identifier generation algorithm to replace manual scrolling and input time by 40% per internal user.'
       ]
     }
   ]
