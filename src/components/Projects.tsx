@@ -18,13 +18,13 @@ function Projects() {
       title: 'National Institute of Hematology and Blood Transfusion',
       description: 'Enrolled in a weekly charity activity tin support of hospitalised patients and their families.',
       technologies: ['Fund raising', 'Distribute Donations', 'Supply Necessities'],
-      demo: 'https://www.youtube.com/watch?v=cmZ9-sDzYYY',
+      demo: undefined,
     },
     {
       title: 'Competitive Programming',
       description: 'A repository of my competitive programming journey which includes daily training, contest participation, and problem solving.',
       technologies: ['C++', 'Optimization', 'Complexity Analysis', 'Problem Solving', 'Time Management', 'Teamwork'],
-      demo: 'https://nhamhung.wordpress.com/2025/03/10/nhat-ky-hang-ngay/',
+      demo: undefined,
     },
   ]
 
@@ -111,47 +111,29 @@ function Projects() {
                   </Badge>
                 ))}
               </HStack>
-              <HStack gap={3}>
-                {/* <Button
-                  onClick={() => window.open(project.github, '_blank')}
-                  size="sm"
-                  variant="outline"
-                  backgroundColor="gray.100"
-                  borderColor="purple.300"
-                  color="purple.600"
-                  fontWeight={600}
-                  _hover={{
-                    bg: 'purple.50',
-                    borderColor: 'purple.400',
-                    transform: 'translateY(-2px)',
-                  }}
-                  transition="all 0.2s"
-                >
-                  <HStack gap={2}>
-                    <Text>GitHub</Text>
-                    <FiExternalLink />
-                  </HStack>
-                </Button> */}
-                <Button
-                  onClick={() => window.open(project.demo, '_blank')}
-                  size="sm"
-                  bgGradient="linear(135deg, #667eea, #764ba2)"
-                  color="blue.600"
-                  fontWeight={600}
-                  backgroundColor="gray.100"
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                    boxShadow: '0 8px 20px rgba(102, 126, 234, 0.4)',
-                  }}
-                  transition="all 0.2s"
-                  borderColor="purple.300"
-                >
-                  <HStack gap={2}>
-                    <Text>Live Demo</Text>
-                    <FiExternalLink />
-                  </HStack>
-                </Button>
-              </HStack>
+              {project.demo && (
+                <HStack gap={3}>
+                  <Button
+                    onClick={() => window.open(project.demo, '_blank')}
+                    size="sm"
+                    bgGradient="linear(135deg, #667eea, #764ba2)"
+                    color="blue.600"
+                    fontWeight={600}
+                    backgroundColor="gray.100"
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 8px 20px rgba(102, 126, 234, 0.4)',
+                    }}
+                    transition="all 0.2s"
+                    borderColor="purple.300"
+                  >
+                    <HStack gap={2}>
+                      <Text>Reference</Text>
+                      <FiExternalLink />
+                    </HStack>
+                  </Button>
+                </HStack>
+              )}
             </Box>
           ))}
         </SimpleGrid>
